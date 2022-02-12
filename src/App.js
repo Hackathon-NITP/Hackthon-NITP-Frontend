@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar/Nabvar";
 import GetData from "./pages/GetData/GetData";
 import Login from "./pages/Login/Login";
 import RegisterCamp from "./pages/RegisterCamp/RegisterCamp";
+import FAQ from "./pages/FAQ/Faq";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/getData" element={<GetData />} />
           <Route path="/register" element={<RegisterCamp />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/faq" element={<FAQ />} />
         </Routes>
       </BrowserRouter>
     </>
