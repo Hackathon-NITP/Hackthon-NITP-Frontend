@@ -3,6 +3,7 @@ import "./home.scss";
 import homePageSVG from "./../../assets/img/1.svg";
 import registerSVG from "./../../assets/img/2.svg";
 import notifySVG from "./../../assets/img/3.svg";
+import saveReportSVG from "./../../assets/img/7.svg";
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -57,10 +58,10 @@ const Home = () => {
                     style={{ padding: 0 }}
                   >
                     <i
-                      className="fas fa-calendar-check fa-2x"
+                      className="fas fa-cloud fa-2x"
                       style={{ color: "#07A6C2" }}
                     ></i>
-                    <h5>Make an Appointment</h5>
+                    <h5>Store your Reports</h5>
                   </div>
                   <div
                     className="col-lg-6 col-md-12 col-sm-12"
@@ -140,10 +141,60 @@ const Home = () => {
         </div>
       </div>
 
-      {/* <!-- Second Div --> */}
+
+      {/* Secoond Div */}
       <div
         className="container-fluid"
-        style={{ padding: "5%", paddingBottom: "8%" }}
+        style={{padding: "5%", paddingTop: "7%" }}
+      >
+        <h1 style={{ textAlign: "center", paddingBottom: "2%" }}>
+          Store Your Reports
+        </h1>
+        <div className="row">
+          <div
+            className="col-lg-6 col-md-12 col-sm-12"
+            style={{ textAlign: "center" }}
+          >
+            <img
+              src={saveReportSVG}
+              alt=""
+              style={{ width: "50%", margin: "5%" }}
+            />
+          </div>
+          <div
+            className="col-lg-6 col-md-12 col-sm-12"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+            }}
+          >
+            <div>
+              <p>
+                Are you fedup by collecting and carrying all your reports to your doctor and want something that can store all your medical reports categorically?<br />
+                We will store all your medical reports on the cloud in different categories so that you can access them anywhere anytime without any hassle of finding them.  {" "}
+                <br />
+                With Us?{" "}
+              </p>
+            </div>
+            <div>
+              <a
+                href="#"
+                className="btn"
+                onClick={() => (window.location.href = "/register")}
+                style={{ backgroundColor: "#07A6C2", color: "white" }}
+              >
+                Store Now!
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* <!-- Third Div --> */}
+      <div
+        className="container-fluid"
+        style={{ backgroundColor: "#F1FAFD", padding: "5%", paddingBottom: "8%" }}
       >
         <h1 style={{ textAlign: "center", padding: "3% 0 2%" }}>
           Check Coming Week Data
@@ -228,10 +279,10 @@ const Home = () => {
         </div>
       </div>
 
-      {/* <!-- Third Div --> */}
+      {/* <!-- Fourth Div --> */}
       <div
         className="container-fluid"
-        style={{ backgroundColor: "#F1FAFD", padding: "5%", paddingTop: "4%" }}
+        style={{padding: "5%", paddingTop: "4%" }}
       >
         <h1 style={{ textAlign: "center", paddingBottom: "2%" }}>
           Register Here!
@@ -280,10 +331,10 @@ const Home = () => {
         </div>
       </div>
 
-      {/* <!-- Fourth Div --> */}
+      {/* <!-- Fifth Div --> */}
       <div
         className="container-fluid"
-        style={{ padding: "4% 5% 5%", paddingTop: "4%" }}
+        style={{backgroundColor: "#F1FAFD", padding: "4% 5% 5%", paddingTop: "4%" }}
       >
         <h1 style={{ textAlign: "center", paddingBottom: "2%" }}>
           Get Notified!
