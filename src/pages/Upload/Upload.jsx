@@ -16,7 +16,7 @@ const Upload = () => {
 
   const [inputData, setInputData] = useState({
     name: "",
-    type: "",
+    type: "report",
   });
 
   const handleChange = (e, property) => {
@@ -111,21 +111,32 @@ const Upload = () => {
         <ToastContainer />
         <h4>Upload PDF</h4>
         <hr />
-        <input
-          type="text"
-          name=""
-          onChange={(e) => handleChange(e, "name")}
-          value={inputData.name}
-        />
 
-        <select
-          value={inputData.type}
-          onChange={(e) => handleChange(e, "type")}
-        >
-          <option value="bloodReport">Blood Report</option>
-          <option value="CTScan">CT Scan</option>
-        </select>
-
+        <div className="d-flex mb-2">
+          <div className="mr-4">
+            <label id="name" className="mr-2">
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              onChange={(e) => handleChange(e, "name")}
+              value={inputData.name}
+              placeholder="Name of file"
+            />
+          </div>
+          <div>
+            <label className="mr-2">Type of Doc</label>
+            <select
+              value={inputData.type}
+              onChange={(e) => handleChange(e, "type")}
+            >
+              <option value="report">Report</option>
+              <option value="prescription">Prescription</option>
+              <option value="vaccination">Vaccination</option>
+            </select>
+          </div>
+        </div>
         <div id="uploadForm">
           <div className="inputDiv">
             <input

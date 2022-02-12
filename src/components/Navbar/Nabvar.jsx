@@ -58,6 +58,11 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
                   </Link>
                 </li>
                 <li className="nav-item active">
+                  <Link className="nav-link" to="/vaccine">
+                    Your Vaccine
+                  </Link>
+                </li>
+                <li className="nav-item active">
                   <div
                     style={{ cursor: "pointer" }}
                     className="nav-link"
@@ -90,7 +95,7 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to='/faq'>
+                  <Link className="nav-link" to="/faq">
                     FAQ's
                   </Link>
                 </li>
