@@ -90,9 +90,9 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="./info.html">
+                  <Link className="nav-link" to='/faq'>
                     FAQ's
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/login">

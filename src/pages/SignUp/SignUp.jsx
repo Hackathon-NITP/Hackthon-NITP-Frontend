@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
-import "./../Login/Login.scss";
+import "./../Login/login.scss";
 
 const Login = ({ isLoggedIn, setIsLoggedIn }) => {
   const navigate = useNavigate();
