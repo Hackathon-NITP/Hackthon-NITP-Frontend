@@ -117,7 +117,7 @@ const Faq = () => {
         id="third-div"
       >
         <h1 style={{textAlign: "center", paddingBottom: "2%"}}>
-          Frequently Asked Questions
+          Common Questions on Vaccines
         </h1>
         <div className="row" style={{padding: "3vh 2.5vh 0"}}>
           <div className="row">
@@ -199,6 +199,56 @@ const Faq = () => {
           </div>
         </div>
       </div>
+
+      <div
+        className="container-fluid"
+        id="fourth-div"
+      >
+        <h1 style={{textAlign: "center", paddingBottom: "2%"}}>
+          FAQ's about MediVault
+        </h1>
+        <div className="row" style={{padding: "3vh 2.5vh 0"}}>
+          <div className="row">
+            <div className="col-lg-6 col-md-6 col-sm-12">
+              <div>
+              <p>
+                  <b>Ques.</b> What is maximum number of files that can be one person can stories? 
+                  <br /><b>Ans.</b> User can upload and store unlimited files on MediVault. 
+                </p>
+              </div>
+            </div>
+            <div className="col-lg-6 col-md-6 col-sm-12">
+              <div>
+                <p>
+                  <b>Ques.</b>In which format the reports have to be uploaded and what is maximum file size of report?
+                  <br /><b>Ans.</b> You have to upload reports in PDF format with file size of maximum 5MB.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-lg-6 col-md-6 col-sm-12">
+              <div>
+                <p>
+                  <b>Ques.</b>What is advantage of using MediVault? <br /><b
+                    >Ans.</b
+                  >You would not have to carry your medical reports to a doctor whenever you <br /> visit them. Moreover we will keep all your reports organised so that you can find  <br /> the report you are looking for easily.
+                </p>
+              </div>
+            </div>
+            <div className="col-lg-6 col-md-6 col-sm-12">
+              <div>
+                <p>
+                  <b>Ques.</b>Are our medical reports kept safe?  <br /><b
+                    >Ans.</b
+                  >We care about privacy of your medical reports thus your medical reports are kept safe.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </>
   )
 }
