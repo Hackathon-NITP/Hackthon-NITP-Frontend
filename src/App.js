@@ -8,6 +8,7 @@ import GetData from "./pages/GetData/GetData";
 import Login from "./pages/Login/Login";
 import Notify from "./pages/Notify/Notify";
 import RegisterCamp from "./pages/RegisterCamp/RegisterCamp";
+import FAQ from "./pages/FAQ/Faq";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/register" element={<RegisterCamp />} />
           <Route path="/login" element={<Login />} />
           <Route path="/notify" element={<Notify />} />
+          <Route path="/faq" element={<FAQ />} />
         </Routes>
       </BrowserRouter>
     </>
