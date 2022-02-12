@@ -85,9 +85,9 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="./notify.html">
-                    Set a Reminder
-                  </a>
+                  <Link className="nav-link" to="/notify">
+                    Notify
+                  </Link>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="./info.html">

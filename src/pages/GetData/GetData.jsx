@@ -119,14 +119,14 @@ const GetData = () => {
               style={{ margin: "2vh 0" }}
             >
               <div className="card-body">
-                <b>Hospital Name:</b> ${center.placeName} <br />
-                <b> Hospital Address:</b> ${center.hospitalAddress} <br />{" "}
-                <b>Vaccine Name:</b> ${center.vaccine} <br /> <b>Fees:</b> Rs. $
+                <b>Hospital Name:</b> {center.placeName} <br />
+                <b> Hospital Address:</b> {center.hospitalAddress} <br />{" "}
+                <b>Vaccine Name:</b> {center.vaccine} <br /> <b>Fees:</b> Rs.{" "}
                 {center.fee} <br />
-                <b>Date:</b> ${center.date} <br />
-                <b>Timing:</b> ${center.timeStart} - ${center.timeEnd} <br />{" "}
-                <b>Dose One:</b> ${center.availDoseOne} <br /> <b>Dose Two:</b>{" "}
-                ${center.availDoseTwo} <br />
+                <b>Date:</b> {center.date} <br />
+                <b>Timing:</b> {center.timeStart} - {center.timeEnd} <br />
+                <b>Dose One:</b> {center.availDoseOne} <br /> <b>Dose Two: </b>
+                {center.availDoseTwo} <br />
               </div>
             </div>
           ))}

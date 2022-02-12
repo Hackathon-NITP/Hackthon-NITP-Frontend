@@ -1,0 +1,67 @@
+
+  #content {
+    display: none;
+  }
+  p {
+    font-family: "Open Sans", sans-serif;
+  }
+  .navlink {
+    font-family: "Lato", sans-serif;
+  }
+
+#first-div {
+    background-color: #f1fafd; 
+    padding: 5%; 
+    padding-bottom: 8%
+}
+#first-div h1 {
+    text-align: center; 
+    padding: 3% 0 2%
+}
+.vaccine-card {
+  padding-bottom: 3%; 
+  justify-content: center; 
+  display: flex
+}
+.vaccine-card div {
+  width: 18rem
+}
+
+
+#second-div {
+  padding: 5%; padding-top: 4%
+}
+#second-div h1 {
+  text-align: center; padding-bottom: 2%
+}
+#second-div img {
+  width: 50%; margin: 5%
+}
+.image-container-div {
+  text-align: center
+}
+.text-continer-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.btn  {
+  background-color: #07a6c2; color: white
+}
+
+
+#third-div {
+  background-color: #f1fafd; padding: 4% 5% 5%; padding-top: 4%
+}
+
+#fourth-div {
+   padding: 4% 5% 5%; padding-top: 4%
+}
+
+footer {
+  background-color: #07a6c2;
+  width: 100%;
+  text-align: center;
+  color: white;
+  padding: 0.5%;
+}
