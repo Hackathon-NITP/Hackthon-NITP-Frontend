@@ -1,0 +1,29 @@
+.new-div {
+    background-color: #4f3dd1;
+    border-radius: 2rem;
+    padding: 1.5rem 2.5rem;
+    width: 18rem;
+    color: white;
+    text-align: center;
+}
+.hello-container {
+    margin: 2rem 5rem;
+    border-color: #4f3dd1;
+    border-radius: 1rem;
+    border-style: solid;
+}
+.row-type-card {
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 4rem;
+}
+i{
+    margin-bottom: 1.3rem;
+}
+h5 {
+    font-size: 1.5rem;
+    font-family: "Open Sans", sans-serif;
+}
+h4 {
+    margin-bottom: 0;
+}
