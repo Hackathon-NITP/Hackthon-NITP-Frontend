@@ -9,6 +9,8 @@ import RegisterCamp from "./pages/RegisterCamp/RegisterCamp";
 import { useState } from "react";
 import Notify from "./pages/Notify/Notify";
 import FAQ from "./pages/FAQ/Faq";
+import Upload from "./pages/Upload/Upload";
+import Views from "./pages/Views/Views";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -34,6 +36,8 @@ function App() {
           />
           <Route path="/notify" element={<Notify />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/upload" element={<Upload />} />
+          <Route path="/view" element={<Views />} />
         </Routes>
       </BrowserRouter>
     </>
