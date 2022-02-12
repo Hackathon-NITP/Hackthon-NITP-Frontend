@@ -1,28 +1,28 @@
 import React, { useContext, useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
-import "./Login.scss";
+import "./../Login/Login.scss";
 
 const Login = ({ isLoggedIn, setIsLoggedIn }) => {
   const navigate = useNavigate();
 
-  const [loginData, setLoginData] = useState({
+  const [registerData, setRegisterData] = useState({
+    username: "",
     email: "",
     password: "",
   });
 
   const handleChange = (e, property) => {
-    setLoginData({
-      ...loginData,
+    setRegisterData({
+      ...registerData,
       [property]: e.target.value,
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
-      const res = await axios.post(`/api/user/login`, loginData);
+      const res = await axios.post(`/api/user/register`, registerData);
       localStorage.setItem("token", res.data.token);
       setIsLoggedIn(true);
       navigate("/view");
@@ -36,11 +36,25 @@ const Login = ({ isLoggedIn, setIsLoggedIn }) => {
       <div className="form_details col">
         <form className="login-form" onSubmit={handleSubmit}>
           <div className="form__group">
+            <label htmlFor="name" className="form__label">
+              Name
+            </label>
+            <input
+              value={registerData.username}
+              onChange={(e) => handleChange(e, "username")}
+              id="name"
+              type="text"
+              placeholder="Your Name"
+              required
+              className="form__input"
+            />
+          </div>
+          <div className="form__group">
             <label htmlFor="email" className="form__label">
               Email address
             </label>
             <input
-              value={loginData.email}
+              value={registerData.email}
               onChange={(e) => handleChange(e, "email")}
               id="email"
               type="email"
@@ -54,7 +68,7 @@ const Login = ({ isLoggedIn, setIsLoggedIn }) => {
               Password
             </label>
             <input
-              value={loginData.password}
+              value={registerData.password}
               onChange={(e) => handleChange(e, "password")}
               type="password"
               placeholder="Password"
@@ -65,11 +79,12 @@ const Login = ({ isLoggedIn, setIsLoggedIn }) => {
             />
           </div>
           <br />
-          <button className="btn">Login</button>
+          <button className="btn">Sign Up</button>
+
           <p className="separate">
-            Create an Account
-            <Link to="/signup" className="ml-2">
-              Sign Up
+            Aldredy have an Account
+            <Link to="/login" className="ml-2">
+              Login
             </Link>
           </p>
         </form>

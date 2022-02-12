@@ -1,15 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+
+import { Link, useNavigate } from "react-router-dom";
 import logo from "./../../assets/img/4.png";
 
-const Navbar = () => {
+const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setIsLoggedIn(false);
+    navigate("/");
+  };
   return (
     <>
       <nav
         className="navbar navbar-expand-lg navbar-light"
         style={{ backgroundColor: "#F1FAFD", padding: "3rem 10% 0" }}
       >
-        {/* <a  href="./index.html"> */}
         <Link to="/" className="navbar-brand">
           <img
             src={logo}
@@ -38,44 +45,62 @@ const Navbar = () => {
           style={{ justifyContent: "end" }}
         >
           <ul className="navbar-nav">
-            <li className="nav-item active">
-              <Link className="nav-link" to="/">
-                Home
-              </Link>
-              {/* <a className="nav-link" href="./index.html">
-                Home <span className="sr-only">(current)</span>
-              </a> */}
-            </li>
-            <li className="nav-item">
-              {/* <a className="nav-link" href="./alldata.html"> */}
-              <Link className="nav-link" to="/getData">
-                Get Data
-              </Link>
-              {/* </a> */}
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/register">
-                Register as Camp
-              </Link>
-              {/* <a className="nav-link" href="./resgister-camp.html">
-                Register as Camp
-              </a> */}
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="./notify.html">
-                Set a Reminder
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="./info.html">
-                FAQ's
-              </a>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/login">
-                Login / SignUp
-              </Link>
-            </li>
+            {isLoggedIn || !!localStorage.getItem("token") ? (
+              <>
+                <li className="nav-item ">
+                  <Link className="nav-link" to="/view">
+                    View Documents
+                  </Link>
+                </li>
+                <li className="nav-item active">
+                  <Link className="nav-link" to="/upload">
+                    Uplaod Documents
+                  </Link>
+                </li>
+                <li className="nav-item active">
+                  <div
+                    style={{ cursor: "pointer" }}
+                    className="nav-link"
+                    onClick={handleLogout}
+                  >
+                    LogOut
+                  </div>
+                </li>
+              </>
+            ) : (
+              <>
+                <li className="nav-item active">
+                  <Link className="nav-link" to="/">
+                    Home
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/getData">
+                    Get Data
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/register">
+                    Register as Camp
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="./notify.html">
+                    Set a Reminder
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="./info.html">
+                    FAQ's
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/login">
+                    Login / SignUp
+                  </Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </nav>

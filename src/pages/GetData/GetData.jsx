@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import "./getData.scss";
 
 const GetData = () => {
   const [centers, setCenters] = useState([]);
@@ -52,7 +53,10 @@ const GetData = () => {
           }}
         >
           <form onSubmit={handleSubmit}>
-            <div className="row container-fluid" style={{ margin: "0" }}>
+            <div
+              className="row container-fluid"
+              style={{ margin: "0", justifyContent: "center" }}
+            >
               <div
                 className="col-lg-12 col-md-12 col-sm-12"
                 style={{ justifyContent: "center", display: "flex" }}
@@ -88,7 +92,7 @@ const GetData = () => {
               </div>
               {/* <div className="col-lg-12" style={{display: "flex", flexDirection: "row", justifyContent: "center",paddingTop: "2vh"}} /> */}
               <button
-                className="btn btn-md"
+                className="btn btn-md custom-button"
                 style={{ backgroundColor: "#07A6C2", color: "white" }}
               >
                 Check
