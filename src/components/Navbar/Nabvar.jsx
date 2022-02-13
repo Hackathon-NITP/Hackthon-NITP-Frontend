@@ -54,7 +54,7 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
                 </li>
                 <li className="nav-item active">
                   <Link className="nav-link" to="/upload">
-                    Uplaod Documents
+                    Upload Documents
                   </Link>
                 </li>
                 <li className="nav-item active">

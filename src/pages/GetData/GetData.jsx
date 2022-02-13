@@ -52,6 +52,17 @@ const GetData = () => {
             width: "60%",
           }}
         >
+          <h4
+            style={{
+              textAlign: "center",
+              marginBottom: "6vh",
+              fontFamily: "Poppins, sans-serif",
+              fontWeight: "bolder",
+              fontSize: "250%",
+            }}
+          >
+            Nearby Vaccine Center
+          </h4>
           <form onSubmit={handleSubmit}>
             <div
               className="row container-fluid"

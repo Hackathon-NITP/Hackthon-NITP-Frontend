@@ -1,12 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./Views.scss";
-import Icon from "./../../assets/img/1.svg";
+import Icon from "./../../assets/img/pdf_icon.png";
 import moment from "moment";
 
 const Views = () => {
   const [allDocuments, setAllDocuments] = useState([]);
   const [filteredDocumnets, setFilteredDocumnets] = useState([]);
+  const [notFound, setNotFound] = useState(false);
 
   const topButtons = [
     {
@@ -40,22 +41,33 @@ const Views = () => {
     console.log("ujjwal in ", type);
     const filterArr = allDocuments.filter((doc) => doc.type === type);
     setFilteredDocumnets(filterArr);
-  };
 
+    if (filterArr.length) {
+      setNotFound(false);
+    } else {
+      setNotFound(true);
+    }
+  };
+  console.log("ujjwal not found", notFound);
   const handleDownload = (doc) => {
     window.open(doc.link);
   };
 
   const handleDelete = async (doc) => {
     console.log("ujjwal in delet");
-    const res = await axios.post(`/deleteDoc/${doc._id}`);
-    console.log("ujjwal deleted", res.data);
 
-    const filterArr = res.data.doc.filter(
-      (current) => current.type === doc.type
-    );
+    try {
+      const res = await axios.post(`/deleteDoc/${doc._id}`);
+      console.log("ujjwal deleted", res.data);
+      const filterArr = res.data.doc.filter(
+        (current) => current.type === doc.type
+      );
 
-    setFilteredDocumnets(filterArr);
+      setFilteredDocumnets(filterArr);
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
   };
   console.log("ujjwal after delete filterarr", filteredDocumnets);
 
@@ -77,11 +89,10 @@ const Views = () => {
           );
         })}
       </div>
-      {/* {filteredDocumnets.length > 0 ? ( */}
-      {
-        filteredDocumnets?.map((doc) => {
-          return (
-            <div className="row">
+      <div className="row">
+        {filteredDocumnets.length > 0 ? (
+          filteredDocumnets?.map((doc) => {
+            return (
               <div className="col-lg-6">
                 <div className="hello-container">
                   <div
@@ -140,30 +151,21 @@ const Views = () => {
                         {/* Hamndle Ends Here */}
                       </div>
                     </div>
-                    {/* <div className="col-lg-1">
-                  <div
-                    style={{ cursor: "pointer" }}
-                    onClick={() => handleDelete(doc)}
-                  >
-                    delete
-                  </div>
-                  <div
-                    style={{ cursor: "pointer" }}
-                    onClick={() => handleDownload(doc)}
-                  >
-                    download
-                  </div>
-                </div> */}
                   </div>
                 </div>
               </div>
-            </div>
-          );
-        })
-        // ) : (
-        //   <div className="mt-5 bolder h2 text-center">Pls Select An Option</div>
-        // )}
-      }
+            );
+          })
+        ) : notFound ? (
+          <div className="mt-5 bolder h2 d-flex justify-content-center w-100">
+            Not Found
+          </div>
+        ) : (
+          <div className="mt-5 bolder h2 d-flex justify-content-center w-100">
+            Please Select An Option
+          </div>
+        )}
+      </div>
     </>
   );
 };

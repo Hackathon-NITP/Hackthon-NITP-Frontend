@@ -95,13 +95,16 @@ const Upload = () => {
           loaded: 0,
         });
       })
+      .then(() => {
+        // window.location.reload(true);
+      })
       .catch((err) => {
         setState({
           ...state,
           selectedPdfs: null,
           loaded: 0,
         });
-        toast.error(`Upload Fail with status: ${err.statusText}`);
+        toast.error(`Upload Fail with status: ${err}`);
       });
   };
 
@@ -115,7 +118,7 @@ const Upload = () => {
         <div className="d-flex mb-2">
           <div className="mr-4">
             <label id="name" className="mr-2">
-              Name
+              Unique Name
             </label>
             <input
               type="text"

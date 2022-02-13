@@ -184,7 +184,7 @@ const Home = () => {
               <a
                 href="#"
                 className="btn"
-                onClick={() => (window.location.href = "/register")}
+                onClick={() => (window.location.href = "/login")}
                 style={{ backgroundColor: "#07A6C2", color: "white" }}
               >
                 Store Now!
@@ -222,13 +222,13 @@ const Home = () => {
                     at various hospitals registered by Government of India at
                     Cowin website.
                   </p>
-                  <a
-                    href="cowin-data.html"
+                  <Link
+                    to="/getData"
                     className="btn hospital-btn"
                     style={{ backgroundColor: "#07A6C2", color: "white" }}
                   >
                     Click here
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -244,11 +244,7 @@ const Home = () => {
                     at hospitals as well as camps all at one page.
                   </p>
                   <br />
-                  {/* <a
-                    href="./alldata.html"
-                    className="btn "
-                    style={{ backgroundColor: "#07A6C2", color: "white" }}
-                  > */}
+
                   <Link
                     to="/getData"
                     className="btn "
@@ -256,7 +252,6 @@ const Home = () => {
                   >
                     Click here
                   </Link>
-                  {/* </a> */}
                 </div>
               </div>
             </div>
@@ -272,13 +267,13 @@ const Home = () => {
                     at camps organised by NGOs registered by DabJab.
                   </p>
                   <br />
-                  <a
-                    href="./camp-data.html"
+                  <Link
+                    to="/getData"
                     className="btn "
                     style={{ backgroundColor: "#07A6C2", color: "white" }}
                   >
                     Click here
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -325,14 +320,13 @@ const Home = () => {
               </p>
             </div>
             <div>
-              <a
-                href="#"
-                className="btn"
-                onClick={() => (window.location.href = "/register")}
+              <Link
+                to="/register"
+                className="btn "
                 style={{ backgroundColor: "#07A6C2", color: "white" }}
               >
-                Register!
-              </a>
+                Register !
+              </Link>
             </div>
           </div>
         </div>
@@ -370,13 +364,13 @@ const Home = () => {
               </p>
             </div>
             <div>
-              <a
-                href="./notify.html"
-                className="btn"
+              <Link
+                to="/notify"
+                className="btn "
                 style={{ backgroundColor: "#07A6C2", color: "white" }}
               >
                 Subscribe!
-              </a>
+              </Link>
             </div>
           </div>
           <div

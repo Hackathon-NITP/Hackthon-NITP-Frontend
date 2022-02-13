@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import moment from "moment";
 
 const Table = () => {
   const [vaccines, setVaccines] = useState([]);
@@ -13,15 +14,16 @@ const Table = () => {
     })();
   }, []);
 
-  const handleChange = (e, dose) => {
+  const handleChange = async (e, vaccine, dose) => {
     console.log("ujjwal check", e.target.value);
-    // if(e.target.checked){
-    //   const payload={
-
-    //   }
-    //  const res= await axios.post("/",payload)
-    //  setVaccines(res.data.docs)
-    // }
+    if (e.target.checked) {
+      const payload = {
+        name: vaccine.name,
+        doseNumber: dose.doseNumber,
+      };
+      const res = await axios.post("/api/vaccine/addVaccine", payload);
+      setVaccines(res.data.docs);
+    }
   };
 
   return (
@@ -39,29 +41,29 @@ const Table = () => {
           </tr>
         </thead>
         <tbody>
-          {[1, 2, 3]?.map((vaccine) => {
+          {vaccines?.map((vaccine) => {
             return (
               <tr>
                 <th scope="row">{vaccine?.name}</th>
-                {[1, 2, 3, 4, 5].map((dose, index) => {
+                {vaccine?.doses?.map((dose, index) => {
                   return (
                     <td key={index + 1200}>
                       <div className="form-check">
                         <input
                           className=""
                           type="checkbox"
-                          disabled={dose?.isActive}
-                          checked={dose?.isActive}
-                          onChange={(e) => handleChange(e, dose)}
+                          disabled={dose?.isMarked}
+                          checked={dose?.isMarked}
+                          onChange={(e) => handleChange(e, vaccine, dose)}
                           id="defaultCheck1"
                         />
                       </div>
-                      {!!dose?.isActive && (
+                      {!!dose?.isMarked && (
                         <label
                           className="form-check-label mt-3"
                           for="defaultCheck1"
                         >
-                          {dose?.date}11
+                          {moment(dose?.date).format("D-MM-YYYY")}
                         </label>
                       )}
                     </td>
