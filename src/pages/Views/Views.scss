@@ -11,14 +11,13 @@
   border-color: #4f3dd1;
   border-radius: 1rem;
   border-style: solid;
-  width: 500px;
 }
 .row-type-card {
   flex-direction: row;
   justify-content: space-around;
   margin-top: 4rem;
 }
-i {
+i{
   margin-bottom: 1.3rem;
 }
 h5 {
@@ -27,4 +26,17 @@ h5 {
 }
 h4 {
   margin-bottom: 0;
+}
+h6 {
+  margin-bottom: 0;
+}
+.fa-trash-can, .fa-file-arrow-down {
+  font-size: 1.5rem;
+}
+.fa-trash-can {
+  color: #DA1212;
+  margin-right: 2rem;
+}
+.fa-file-arrow-down {
+  color: #9AE66E;
 }

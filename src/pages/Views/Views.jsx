@@ -10,17 +10,17 @@ const Views = () => {
 
   const topButtons = [
     {
-      icon: "",
+      icon: "fa-solid fa-file-medical fa-2x",
       heading: "Report",
       type: "report",
     },
     {
-      icon: "",
+      icon: "fa-solid fa-prescription fa-2x",
       heading: "Prescription",
       type: "prescription",
     },
     {
-      icon: "",
+      icon: "fa-solid fa-syringe fa-2x",
       heading: "Vaccination",
       type: "vaccination",
     },
@@ -70,7 +70,7 @@ const Views = () => {
               onClick={() => handleFilter(topButton.type)}
             >
               <div className="card-body">
-                <i className="fal fa-notes-medical fa-2x"></i>
+                <i className={topButton.icon}></i>
                 <h5 className="card-title">{topButton.heading}</h5>
               </div>
             </div>
@@ -81,46 +81,66 @@ const Views = () => {
       {
         filteredDocumnets?.map((doc) => {
           return (
-            <div className="hello-container">
-              <div
-                className="row"
-                style={{
-                  marginTop: "1rem",
-                }}
-              >
-                <div
-                  className="col-lg-3"
-                  style={{ display: "flex", alignItems: "center" }}
-                >
-                  <img
-                    src={Icon}
-                    style={{ width: "7rem", height: "7rem" }}
-                    alt=""
-                  />
-                </div>
-                <div className="col-lg-7">
-                  <h4>{doc.name}</h4>
-                  {/* <p>
+            <div className="row">
+              <div className="col-lg-6">
+                <div className="hello-container">
+                  <div
+                    className="row"
+                    style={{
+                      marginTop: "1rem",
+                    }}
+                  >
+                    <div
+                      className="col-lg-2"
+                      style={{ display: "flex", alignItems: "center" }}
+                    >
+                      <img
+                        src={Icon}
+                        style={{ width: "7rem", height: "7rem" }}
+                        alt=""
+                      />
+                    </div>
+                    <div className="col-lg-10">
+                      <h4>{doc.name}</h4>
+                      {/* <p>
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                     Vero, voluptatem.
                   </p> */}
-                  <hr style={{ marginRight: "3rem" }} />
-                  <div className="row" style={{ paddingLeft: "1rem" }}>
-                    <div className="col-lg-2" style={{ padding: 0 }}>
-                      <h6>Uploaded On</h6>
-                      <p>{moment(doc.createdAt).format("D-MM-YYYY")}</p>
+                      <hr style={{ marginRight: "3rem" }} />
+                      <div className="row">
+                        <div className="col-lg-6" style={{ padding: 0 }}>
+                          <h6>Uploaded On</h6>
+                          <p>{moment(doc.createdAt).format("D-MM-YYYY")}</p>
+                        </div>
+
+                        {/* Handle Starts Here */}
+
+                        <div class="col-lg-6">
+                          <div
+                            style={{
+                              display: "flex",
+                              flexDirection: "row",
+                              justifyContent: "flex-end",
+                              marginRight: "2rem",
+                            }}
+                          >
+                            <i
+                              class="fa-regular fa-trash-can"
+                              style={{ cursor: "pointer" }}
+                              onClick={() => handleDelete(doc)}
+                            ></i>
+                            <i
+                              class="fa-solid fa-file-arrow-down"
+                              style={{ cursor: "pointer" }}
+                              onClick={() => handleDownload(doc)}
+                            ></i>
+                          </div>
+                        </div>
+
+                        {/* Hamndle Ends Here */}
+                      </div>
                     </div>
-                    {/* <div className="col-lg-5">
-                      <h6>Covers</h6>
-                      <p>Lorem ipsum dolor sit amet consectetur</p>
-                    </div>
-                    <div className="col-lg-3">
-                      <h6>TPA</h6>
-                      <p>Lorem, ipsum.</p>
-                    </div> */}
-                  </div>
-                </div>
-                <div className="col-lg-1">
+                    {/* <div className="col-lg-1">
                   <div
                     style={{ cursor: "pointer" }}
                     onClick={() => handleDelete(doc)}
@@ -132,6 +152,8 @@ const Views = () => {
                     onClick={() => handleDownload(doc)}
                   >
                     download
+                  </div>
+                </div> */}
                   </div>
                 </div>
               </div>
